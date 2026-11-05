@@ -1,0 +1,165 @@
+.member-benefits {
+  background: #fff;
+  min-height: 250px;
+  padding: 82px 5.2% 75px;
+}
+
+.member-benefits h2 {
+  color: #080808;
+  font: 600 18px/1.2 Arial, sans-serif;
+  margin: 0 0 12px;
+}
+
+.member-benefits h2 span {
+  color: #ff671d;
+}
+
+.member-benefits__content {
+  align-items: center;
+  display: flex;
+  gap: 8%;
+  justify-content: space-between;
+}
+
+.member-benefits__cards {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  max-width: 805px;
+  width: 100%;
+}
+
+.benefit-card {
+  align-items: center;
+  background: #f6f6f6;
+  border-radius: 9px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  display: flex;
+  gap: 10px;
+  min-height: 60px;
+  padding: 0 12px;
+}
+
+.benefit-card__icon {
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.13);
+  color: #ff671d;
+  display: inline-flex;
+  flex: 0 0 38px;
+  font: 700 25px/1 Arial, sans-serif;
+  height: 38px;
+  justify-content: center;
+}
+
+.benefit-card strong,
+.benefit-card small {
+  display: block;
+  font-family: Arial, sans-serif;
+}
+
+.benefit-card strong {
+  color: #111;
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.benefit-card small {
+  color: #777;
+  font-size: 12px;
+  margin-top: 4px;
+  white-space: nowrap;
+}
+
+.member-benefits__button {
+  align-items: center;
+  background: #ff671d;
+  border-radius: 8px;
+  color: #fff;
+  display: flex;
+  flex: 0 0 260px;
+  font: 13px Arial, sans-serif;
+  height: 57px;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.member-benefits__button:hover {
+  background: #e95710;
+}
+
+.fixation-banner {
+  background: #050505;
+  color: #fff;
+  height: 43px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.fixation-banner__track {
+  align-items: center;
+  animation: fixation-scroll 10s linear infinite;
+  display: inline-flex;
+  gap: 14px;
+  height: 100%;
+  min-width: max-content;
+  padding-left: 0;
+}
+
+.fixation-banner__track span {
+  font: 700 16px/1 Arial, sans-serif;
+}
+
+.fixation-banner__track b {
+  font-size: 18px;
+}
+
+@keyframes fixation-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 900px) {
+  .member-benefits {
+    padding: 50px 20px;
+  }
+
+  .member-benefits__content {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .member-benefits__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .member-benefits__button {
+    flex-basis: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .member-benefits {
+    padding: 40px 16px;
+  }
+
+  .member-benefits h2 {
+    font-size: 16px;
+  }
+
+  .member-benefits__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-card {
+    min-height: 58px;
+  }
+}

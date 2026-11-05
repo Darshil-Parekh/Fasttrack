@@ -1,13 +1,20 @@
-import Navbar from './components/Navbar'
-import './App.css'
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import CategoriesImages from "./components/CategoriesImages";
+import MemberBenefits from "./components/MemberBenefits";
+import "./App.css";
 
 function App() {
   return (
     <>
       <Navbar />
-      <main className="page-placeholder" aria-hidden="true" />
+      <main>
+        <Hero />
+        <CategoriesImages />
+        <MemberBenefits />
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
