@@ -1,0 +1,146 @@
+.follow-us {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 18px 16px 48px;
+}
+
+.follow-us > h2 {
+  color: #080808;
+  font: 400 24px/1.2 Arial, sans-serif;
+  margin: 0 0 36px -5px;
+}
+
+.follow-us__grid {
+  aspect-ratio: 1 / 1;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.follow-us__post {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.follow-us__post--watch {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.follow-us__post--backpack {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.follow-us__post--sling {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.follow-us__post--pink-campaign {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.follow-us__post--chain-bag {
+  grid-column: 4;
+  grid-row: 2;
+}
+
+.follow-us__post--quilted-bag {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.follow-us__post--pink-bag {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.follow-us__post--shoulder-bag {
+  grid-column: 1;
+  grid-row: 4;
+}
+
+.follow-us__post--green-campaign {
+  grid-column: 2;
+  grid-row: 4;
+}
+
+.follow-us__post--featured-bag {
+  grid-column: 3 / span 2;
+  grid-row: 3 / span 2;
+}
+
+.follow-us__post > img {
+  aspect-ratio: 1;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 350ms ease;
+  width: 100%;
+}
+
+.follow-us__post:hover > img,
+.follow-us__post:focus-visible > img {
+  transform: scale(1.025);
+}
+
+.follow-us__overlay {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.72);
+  color: #080808;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 220ms ease;
+}
+
+.follow-us__post:hover .follow-us__overlay,
+.follow-us__post:focus-visible .follow-us__overlay {
+  opacity: 1;
+}
+
+.follow-us__overlay svg {
+  height: 34px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  width: 34px;
+}
+
+.follow-us__overlay .follow-us__icon-dot {
+  fill: currentColor;
+  stroke: none;
+}
+
+@media (max-width: 700px) {
+  .follow-us {
+    padding: 14px 12px 32px;
+  }
+
+  .follow-us > h2 {
+    font-size: 16px;
+    margin: 0 0 18px;
+  }
+
+  .follow-us__grid {
+    gap: 6px;
+  }
+
+  .follow-us__overlay svg {
+    height: 26px;
+    width: 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .follow-us__post > img,
+  .follow-us__overlay {
+    transition: none;
+  }
+}
