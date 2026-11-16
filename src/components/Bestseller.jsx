@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import flexBand from '../Images/fit1.webp'
 import flexBandGreen from '../Images/fit2.webp'
 import newAstor from '../Images/38151PP01K_1.webp'
@@ -11,7 +11,24 @@ import fastfit from '../Images/68011PP08_1.webp'
 import vybHaloBrown from '../Images/FV60035QM01W_1.webp'
 import vybHaloGrey from '../Images/FV60035WM01W_1.webp'
 import vybStriker from '../Images/FV60130WM01W_1.webp'
+import automaticsBanner from '../Images/Automatics_D.webp'
+import overdriveBanner from '../Images/FT_CC_OVERDRIVE_D.jpg'
+import gambitBanner from '../Images/FT_CC_GAMBIT_D.webp'
+import ufoBanner from '../Images/FT_CC_UFO_d.webp'
+import hypeBanner from '../Images/FT_CC_hype_adventure_d.webp'
+import vybBanner from '../Images/FT_CC_vyb_d.jpg'
+import wildBanner from '../Images/FT_CC_wild_d.jpg'
 import './Bestseller.css'
+
+const banners = [
+  { image: automaticsBanner, alt: 'Fastrack Automatics - Classic!' },
+  { image: overdriveBanner, alt: 'Fastrack Overdrive collection' },
+  { image: gambitBanner, alt: 'Fastrack Gambit collection' },
+  { image: ufoBanner, alt: 'Fastrack UFO collection' },
+  { image: hypeBanner, alt: 'Fastrack Hype Adventure collection' },
+  { image: vybBanner, alt: 'Fastrack Vyb collection' },
+  { image: wildBanner, alt: 'Fastrack Wild collection' },
+]
 
 const products = [
   {
@@ -130,6 +147,15 @@ const products = [
 
 function Bestseller() {
   const viewportRef = useRef(null)
+  const [activeBanner, setActiveBanner] = useState(0)
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveBanner((current) => (current + 1) % banners.length)
+    }, 4000)
+
+    return () => window.clearInterval(timer)
+  }, [])
 
   const move = (direction) => {
     const viewport = viewportRef.current
@@ -141,6 +167,10 @@ function Bestseller() {
       left: direction * (firstCard.getBoundingClientRect().width + gap),
       behavior: 'smooth',
     })
+  }
+
+  const moveBanner = (direction) => {
+    setActiveBanner((current) => (current + direction + banners.length) % banners.length)
   }
 
   return (
@@ -188,6 +218,36 @@ function Bestseller() {
           type="button"
           aria-label="Next bestsellers"
           onClick={() => move(1)}
+        >
+          ›
+        </button>
+      </div>
+      <div className="bestsellers-banner" aria-label="Featured collections">
+        <button
+          className="bestsellers-banner__arrow bestsellers-banner__arrow--previous"
+          type="button"
+          aria-label="Previous featured collection"
+          onClick={() => moveBanner(-1)}
+        >
+          ‹
+        </button>
+        <div className="bestsellers-banner__viewport">
+          <div
+            className="bestsellers-banner__track"
+            style={{ transform: `translateX(-${activeBanner * 100}%)` }}
+          >
+            {banners.map((banner) => (
+              <div className="bestsellers-banner__slide" key={banner.image}>
+                <img src={banner.image} alt={banner.alt} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <button
+          className="bestsellers-banner__arrow bestsellers-banner__arrow--next"
+          type="button"
+          aria-label="Next featured collection"
+          onClick={() => moveBanner(1)}
         >
           ›
         </button>

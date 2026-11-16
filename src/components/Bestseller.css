@@ -151,6 +151,66 @@
   right: -36px;
 }
 
+.bestsellers-banner {
+  margin: 40px 0 0;
+  position: relative;
+}
+
+.bestsellers-banner__viewport {
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bestsellers-banner__track {
+  display: flex;
+  transition: transform 450ms ease;
+}
+
+.bestsellers-banner__slide {
+  aspect-ratio: 2.5 / 1;
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.bestsellers-banner__slide img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.bestsellers-banner__arrow {
+  align-items: center;
+  background: #f2f2f2;
+  border: 0;
+  border-radius: 4px;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font: 28px/1 Arial, sans-serif;
+  height: 56px;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  z-index: 1;
+}
+
+.bestsellers-banner__arrow:hover,
+.bestsellers-banner__arrow:focus-visible {
+  background: #e6e6e6;
+}
+
+.bestsellers-banner__arrow--previous {
+  left: -50px;
+}
+
+.bestsellers-banner__arrow--next {
+  right: -50px;
+}
+
 @media (max-width: 760px) {
   .bestsellers {
     padding: 34px 20px 44px;
@@ -170,6 +230,14 @@
 
   .bestsellers__arrow--next {
     right: -8px;
+  }
+
+  .bestsellers-banner__arrow--previous {
+    left: 8px;
+  }
+
+  .bestsellers-banner__arrow--next {
+    right: 8px;
   }
 }
 
@@ -206,5 +274,18 @@
 
   .bestseller-card__price > span {
     font-size: 12px;
+  }
+
+  .bestsellers-banner {
+    margin-top: 28px;
+  }
+
+  .bestsellers-banner__slide {
+    aspect-ratio: 1.5 / 1;
+  }
+
+  .bestsellers-banner__arrow {
+    height: 42px;
+    width: 30px;
   }
 }
