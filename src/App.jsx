@@ -5,6 +5,7 @@ import MemberBenefits from "./components/MemberBenefits";
 import "./App.css";
 import Trending, { TrendingBanner } from "./components/Trending";
 import FeaturedSpotlight from "./components/FeaturedSpotlight";
+import ShopYourVibe from "./components/ShopYourVibe";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Trending/>
         <FeaturedSpotlight />
         <TrendingBanner />
+        <ShopYourVibe/>
       </main>
     </>
   );

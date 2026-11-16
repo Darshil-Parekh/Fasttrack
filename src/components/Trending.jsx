@@ -38,43 +38,43 @@ function Trending() {
 
   return (
     <section className="trending-section" aria-label="Trending products">
-        <h2>TRENDING</h2>
-        <div className="trending-carousel">
-          <button
-            className="trending-arrow trending-arrow--left"
-            type="button"
-            aria-label="Previous trending products"
-            onClick={() => setOffset((current) => (current - 1 + products.length) % products.length)}
-          >
-            ‹
-          </button>
-          <div className="trending-products">
-            {visibleProducts.map((product, index) => (
-              <article className="trending-card" key={`${product.image}-${index}`}>
-                <div className="trending-card__image">
-                  <img src={product.image} alt={product.name} />
+      <h2>TRENDING</h2>
+      <div className="trending-carousel">
+        <button
+          className="trending-arrow trending-arrow--left"
+          type="button"
+          aria-label="Previous trending products"
+          onClick={() => setOffset((current) => (current - 1 + products.length) % products.length)}
+        >
+          ‹
+        </button>
+        <div className="trending-products">
+          {visibleProducts.map((product, index) => (
+            <article className="trending-card" key={`${product.image}-${index}`}>
+              <div className="trending-card__image">
+                <img src={product.image} alt={product.name} />
+              </div>
+              <div className="trending-card__details">
+                <h3>{product.name}</h3>
+                <p>Unisex Watches</p>
+                <div className="trending-card__price">
+                  <strong>₹ 4499</strong>
+                  <del>₹ 5999</del>
+                  <span>25% off</span>
                 </div>
-                <div className="trending-card__details">
-                  <h3>{product.name}</h3>
-                  <p>Unisex Watches</p>
-                  <div className="trending-card__price">
-                    <strong>₹ 4499</strong>
-                    <del>₹ 5999</del>
-                    <span>25% off</span>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-          <button
-            className="trending-arrow trending-arrow--right"
-            type="button"
-            aria-label="Next trending products"
-            onClick={() => setOffset((current) => (current + 1) % products.length)}
-          >
-            ›
-          </button>
+              </div>
+            </article>
+          ))}
         </div>
+        <button
+          className="trending-arrow trending-arrow--right"
+          type="button"
+          aria-label="Next trending products"
+          onClick={() => setOffset((current) => (current + 1) % products.length)}
+        >
+          ›
+        </button>
+      </div>
     </section>
   )
 }
