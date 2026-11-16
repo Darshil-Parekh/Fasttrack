@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "./Hero.css";
 
-
+import mobileHeroBanner from "../Images/After-Hours-Spooky-HP-mobile.jpg";
 import spooky from "../Images/After-Hours-Spooky-HP-D.jpg";
 import bestseller from "../Images/ft_bestseller_hero_d.webp";
 import mainHero from "../Images/FT_Main_hero_banner_d.webp";
@@ -26,11 +26,27 @@ const HeroCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const timer = window.setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    const mobileQuery = window.matchMedia("(max-width: 600px)");
+    let timer;
 
-    return () => window.clearInterval(timer);
+    const updateAutoplay = () => {
+      if (mobileQuery.matches) {
+        window.clearInterval(timer);
+        timer = undefined;
+      } else if (!timer) {
+        timer = window.setInterval(() => {
+          setCurrentIndex((prev) => (prev + 1) % slides.length);
+        }, 5000);
+      }
+    };
+
+    updateAutoplay();
+    mobileQuery.addEventListener("change", updateAutoplay);
+
+    return () => {
+      window.clearInterval(timer);
+      mobileQuery.removeEventListener("change", updateAutoplay);
+    };
   }, []);
 
   const nextSlide = () => {
@@ -64,14 +80,23 @@ const HeroCarousel = () => {
         >
           {slides.map((image, index) => (
             <div className="carousel-slide" key={image}>
-              <img
-                src={image}
-                alt={`Fastrack promotional banner ${index + 1}`}
-                className="hero-image"
-                loading={index === currentIndex ? "eager" : "lazy"}
-                fetchPriority={index === 0 ? "high" : "auto"}
-                decoding="async"
-              />
+              {index === currentIndex && (
+                <picture className="hero-picture">
+                  {index === 0 && (
+                    <source
+                      media="(max-width: 600px)"
+                      srcSet={mobileHeroBanner}
+                    />
+                  )}
+                  <img
+                    src={image}
+                    alt={`Fastrack promotional banner ${index + 1}`}
+                    className="hero-image"
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                    decoding="async"
+                  />
+                </picture>
+              )}
             </div>
           ))}
         </div>
