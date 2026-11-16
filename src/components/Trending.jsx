@@ -12,6 +12,24 @@ const products = [
   { image: fit4, name: 'Fastrack Smart Flex Band With A-GPS, SpO2, 100+ Sports With ...' },
 ]
 
+const tickerItems = Array.from({ length: 16 }, () => ['TRENDING', '•']).flat()
+
+export function TrendingBanner() {
+  return (
+    <div className="trending-banner" aria-label="Trending">
+      <div className="trending-banner__track">
+        {[...tickerItems, ...tickerItems].map((item, index) =>
+          item === '•' ? (
+            <b key={`${item}-${index}`} aria-hidden="true">{item}</b>
+          ) : (
+            <span key={`${item}-${index}`}>{item}</span>
+          ),
+        )}
+      </div>
+    </div>
+  )
+}
+
 function Trending() {
   const [offset, setOffset] = useState(0)
   const visibleProducts = products.map(
@@ -20,43 +38,43 @@ function Trending() {
 
   return (
     <section className="trending-section" aria-label="Trending products">
-      <h2>TRENDING</h2>
-      <div className="trending-carousel">
-        <button
-          className="trending-arrow trending-arrow--left"
-          type="button"
-          aria-label="Previous trending products"
-          onClick={() => setOffset((current) => (current - 1 + products.length) % products.length)}
-        >
-          ‹
-        </button>
-        <div className="trending-products">
-          {visibleProducts.map((product, index) => (
-            <article className="trending-card" key={`${product.image}-${index}`}>
-              <div className="trending-card__image">
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className="trending-card__details">
-                <h3>{product.name}</h3>
-                <p>Unisex Watches</p>
-                <div className="trending-card__price">
-                  <strong>₹ 4499</strong>
-                  <del>₹ 5999</del>
-                  <span>25% off</span>
+        <h2>TRENDING</h2>
+        <div className="trending-carousel">
+          <button
+            className="trending-arrow trending-arrow--left"
+            type="button"
+            aria-label="Previous trending products"
+            onClick={() => setOffset((current) => (current - 1 + products.length) % products.length)}
+          >
+            ‹
+          </button>
+          <div className="trending-products">
+            {visibleProducts.map((product, index) => (
+              <article className="trending-card" key={`${product.image}-${index}`}>
+                <div className="trending-card__image">
+                  <img src={product.image} alt={product.name} />
                 </div>
-              </div>
-            </article>
-          ))}
+                <div className="trending-card__details">
+                  <h3>{product.name}</h3>
+                  <p>Unisex Watches</p>
+                  <div className="trending-card__price">
+                    <strong>₹ 4499</strong>
+                    <del>₹ 5999</del>
+                    <span>25% off</span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          <button
+            className="trending-arrow trending-arrow--right"
+            type="button"
+            aria-label="Next trending products"
+            onClick={() => setOffset((current) => (current + 1) % products.length)}
+          >
+            ›
+          </button>
         </div>
-        <button
-          className="trending-arrow trending-arrow--right"
-          type="button"
-          aria-label="Next trending products"
-          onClick={() => setOffset((current) => (current + 1) % products.length)}
-        >
-          ›
-        </button>
-      </div>
     </section>
   )
 }

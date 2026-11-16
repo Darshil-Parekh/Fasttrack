@@ -3,7 +3,8 @@ import Hero from "./components/Hero";
 import CategoriesImages from "./components/CategoriesImages";
 import MemberBenefits from "./components/MemberBenefits";
 import "./App.css";
-import Trending from "./components/Trending";
+import Trending, { TrendingBanner } from "./components/Trending";
+import FeaturedSpotlight from "./components/FeaturedSpotlight";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         <CategoriesImages />
         <MemberBenefits />
         <Trending/>
+        <FeaturedSpotlight />
+        <TrendingBanner />
       </main>
     </>
   );

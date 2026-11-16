@@ -4,6 +4,40 @@
   padding: 34px 5.65% 30px;
 }
 
+.trending-banner {
+  background: #050505;
+  color: #fff;
+  height: 43px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.trending-banner__track {
+  align-items: center;
+  animation: trending-scroll 10s linear infinite;
+  display: inline-flex;
+  gap: 14px;
+  height: 100%;
+  min-width: max-content;
+}
+
+.trending-banner__track span {
+  font: 700 13px/1 Arial, sans-serif;
+}
+
+.trending-banner__track b {
+  font-size: 15px;
+}
+
+@keyframes trending-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .trending-section h2 {
   color: #080808;
   font: 400 24px/1 Arial, sans-serif;
