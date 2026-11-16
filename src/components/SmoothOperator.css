@@ -1,0 +1,152 @@
+.smooth-operator {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 18px 28px 48px;
+}
+
+.smooth-operator > h2 {
+  color: #080808;
+  font: 400 24px/1.2 Arial, sans-serif;
+  margin: 0 0 40px;
+}
+
+.smooth-operator__banner {
+  border-radius: 8px;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.smooth-operator__content {
+  align-items: start;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 20px;
+}
+
+.smooth-operator__product {
+  min-width: 0;
+}
+
+.smooth-operator__watch-wrap {
+  height: clamp(320px, 39.5vw, 510px);
+  position: relative;
+}
+
+.smooth-operator__watch {
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.smooth-operator__arrow {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  font: 28px/1 Arial, sans-serif;
+  height: 40px;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+}
+
+.smooth-operator__arrow:hover,
+.smooth-operator__arrow:focus-visible {
+  color: #f47721;
+}
+
+.smooth-operator__arrow--previous {
+  left: 7%;
+}
+
+.smooth-operator__arrow--next {
+  right: 7%;
+}
+
+.smooth-operator__details {
+  margin: 8px auto 0;
+  max-width: 460px;
+  padding: 0 8px;
+}
+
+.smooth-operator__details h3 {
+  color: #111;
+  font: 400 18px/1.3 Arial, sans-serif;
+  margin: 0 0 8px;
+}
+
+.smooth-operator__details p {
+  color: #333;
+  font: 16px/1.5 Arial, sans-serif;
+  margin: 0;
+  max-width: 430px;
+}
+
+.smooth-operator__campaign {
+  aspect-ratio: 1.21 / 1;
+  border-radius: 8px;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  object-position: center 42%;
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .smooth-operator {
+    padding: 14px 14px 32px;
+  }
+
+  .smooth-operator > h2 {
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+
+  .smooth-operator__banner {
+    border-radius: 4px;
+  }
+
+  .smooth-operator__content {
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .smooth-operator__watch-wrap {
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .smooth-operator__arrow {
+    font-size: 18px;
+    height: 28px;
+    width: 22px;
+  }
+
+  .smooth-operator__details {
+    margin-top: 4px;
+    padding: 0 6px;
+  }
+
+  .smooth-operator__details h3 {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .smooth-operator__details p {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .smooth-operator__campaign {
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+  }
+}

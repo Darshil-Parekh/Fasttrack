@@ -7,6 +7,7 @@ import Trending, { TrendingBanner } from "./components/Trending";
 import FeaturedSpotlight from "./components/FeaturedSpotlight";
 import ShopYourVibe from "./components/ShopYourVibe";
 import Bestseller from "./components/Bestseller";
+import SmoothOperator from "./components/SmoothOperator";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <TrendingBanner />
         <ShopYourVibe/>
         <Bestseller/>
+        <SmoothOperator />
       </main>
     </>
   );
