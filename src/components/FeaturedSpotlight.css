@@ -35,13 +35,13 @@
   color: #333;
   cursor: pointer;
   display: flex;
-  font: 28px/1 Arial, sans-serif;
-  height: 40px;
+  font: 38px/1 Arial, sans-serif;
+  height: 56px;
   justify-content: center;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 32px;
+  width: 48px;
 }
 
 .featured-spotlight__arrow:hover,

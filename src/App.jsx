@@ -8,6 +8,9 @@ import FeaturedSpotlight from "./components/FeaturedSpotlight";
 import ShopYourVibe from "./components/ShopYourVibe";
 import Bestseller from "./components/Bestseller";
 import SmoothOperator from "./components/SmoothOperator";
+import FollowUs from "./components/FollowUs";
+import ShoppingAssurance from "./components/ShoppingAssurance";
+import Footer from "./components/Footer";
 
 function App() {
   return (

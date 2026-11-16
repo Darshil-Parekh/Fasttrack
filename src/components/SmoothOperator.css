@@ -48,14 +48,14 @@
   color: #333;
   cursor: pointer;
   display: flex;
-  font: 28px/1 Arial, sans-serif;
-  height: 40px;
+  font: 38px/1 Arial, sans-serif;
+  height: 56px;
   justify-content: center;
   padding: 0;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 32px;
+  width: 48px;
 }
 
 .smooth-operator__arrow:hover,
@@ -125,9 +125,9 @@
   }
 
   .smooth-operator__arrow {
-    font-size: 18px;
-    height: 28px;
-    width: 22px;
+    font-size: 26px;
+    height: 44px;
+    width: 38px;
   }
 
   .smooth-operator__details {

@@ -57,12 +57,12 @@
   color: #111;
   cursor: pointer;
   display: flex;
-  font: 36px/1 Arial, sans-serif;
-  height: 45px;
+  font: 44px/1 Arial, sans-serif;
+  height: 56px;
   justify-content: center;
   position: absolute;
   top: 235px;
-  width: 45px;
+  width: 56px;
   z-index: 2;
 }
 

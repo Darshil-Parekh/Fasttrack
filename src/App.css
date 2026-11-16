@@ -6,7 +6,9 @@
   gap: 24px;
   height: 72px;
   padding: 0 48px;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 10;
   box-sizing: border-box;
   background: #fff;
 }

@@ -126,13 +126,13 @@
   color: #111;
   cursor: pointer;
   display: flex;
-  font: 36px/1 Arial, sans-serif;
-  height: 42px;
+  font: 44px/1 Arial, sans-serif;
+  height: 56px;
   justify-content: center;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 42px;
+  width: 56px;
   z-index: 1;
 }
 
