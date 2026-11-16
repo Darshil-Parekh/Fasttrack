@@ -8,6 +8,7 @@ import FeaturedSpotlight from "./components/FeaturedSpotlight";
 import ShopYourVibe from "./components/ShopYourVibe";
 import Bestseller from "./components/Bestseller";
 import SmoothOperator from "./components/SmoothOperator";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Bestseller/>
         <SmoothOperator />
       </main>
+      <Footer/>
     </>
   );
 }
