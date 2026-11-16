@@ -1,0 +1,89 @@
+.shopping-assurance {
+  background: #f7f7f7;
+  margin-top: 40px;
+  padding: 28px 5.5%;
+  width: 100%;
+}
+
+.shopping-assurance__items {
+  align-items: center;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: 1240px;
+}
+
+.shopping-assurance__item {
+  align-items: center;
+  color: #626262;
+  display: flex;
+  gap: clamp(14px, 2vw, 28px);
+  justify-content: center;
+  min-width: 0;
+}
+
+.shopping-assurance__icon {
+  align-items: center;
+  display: flex;
+  flex: 0 0 48px;
+  height: 48px;
+  justify-content: center;
+}
+
+.shopping-assurance__icon svg {
+  fill: none;
+  height: 44px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+  width: 44px;
+}
+
+.shopping-assurance__item p {
+  display: grid;
+  font: 400 16px/1.35 Arial, sans-serif;
+  gap: 2px;
+}
+
+.shopping-assurance__item p span {
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .shopping-assurance {
+    margin-top: 28px;
+    padding: 24px 16px;
+  }
+
+  .shopping-assurance__items {
+    gap: 22px 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .shopping-assurance__item {
+    gap: 12px;
+    justify-content: flex-start;
+  }
+
+  .shopping-assurance__icon {
+    flex-basis: 38px;
+    height: 38px;
+  }
+
+  .shopping-assurance__icon svg {
+    height: 36px;
+    width: 36px;
+  }
+
+  .shopping-assurance__item p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .shopping-assurance__items {
+    grid-template-columns: 1fr;
+  }
+}

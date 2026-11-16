@@ -8,6 +8,8 @@ import FeaturedSpotlight from "./components/FeaturedSpotlight";
 import ShopYourVibe from "./components/ShopYourVibe";
 import Bestseller from "./components/Bestseller";
 import SmoothOperator from "./components/SmoothOperator";
+import FollowUs from "./components/FollowUs";
+import ShoppingAssurance from "./components/ShoppingAssurance";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <ShopYourVibe/>
         <Bestseller/>
         <SmoothOperator />
+        <FollowUs/>
+        <ShoppingAssurance />
       </main>
     </>
   );
