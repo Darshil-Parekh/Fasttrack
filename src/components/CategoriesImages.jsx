@@ -31,7 +31,12 @@ function CategoriesImages() {
             href={`#${category.name.toLowerCase().replaceAll(' ', '-')}`}
             key={category.name}
           >
-            <img src={category.image} alt={category.name} />
+            <img
+              src={category.image}
+              alt={category.name}
+              loading="lazy"
+              decoding="async"
+            />
             <span>{category.name}</span>
           </a>
         ))}

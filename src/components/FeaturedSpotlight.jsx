@@ -55,6 +55,8 @@ function FeaturedSpotlight() {
             src={product.image}
             alt={product.name}
             key={product.image}
+            loading="lazy"
+            decoding="async"
           />
           <button
             className="featured-spotlight__arrow featured-spotlight__arrow--previous"
@@ -83,6 +85,8 @@ function FeaturedSpotlight() {
         className="featured-spotlight__campaign"
         src={campaign}
         alt="Fastrack Never Same. Never Sane. campaign"
+        loading="lazy"
+        decoding="async"
       />
     </section>
   )

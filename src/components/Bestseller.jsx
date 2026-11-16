@@ -193,7 +193,12 @@ function Bestseller() {
                 key={`${product.image}-${index}`}
               >
                 <div className="bestseller-card__image">
-                  <img src={product.image} alt={product.name} />
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    loading="lazy"
+                    decoding="async"
+                  />
                   {product.rating && (
                     <span className="bestseller-card__rating">
                       <span aria-hidden="true">★</span> {product.rating} ({product.reviews})
@@ -238,7 +243,12 @@ function Bestseller() {
           >
             {banners.map((banner) => (
               <div className="bestsellers-banner__slide" key={banner.image}>
-                <img src={banner.image} alt={banner.alt} />
+                <img
+                  src={banner.image}
+                  alt={banner.alt}
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             ))}
           </div>

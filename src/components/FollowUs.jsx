@@ -37,7 +37,12 @@ function FollowUs() {
             rel="noreferrer"
             aria-label={`${post.alt} on Instagram`}
           >
-            <img src={post.image} alt={post.alt} />
+            <img
+              src={post.image}
+              alt={post.alt}
+              loading="lazy"
+              decoding="async"
+            />
             <span className="follow-us__overlay" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none">
                 <rect x="3" y="3" width="18" height="18" rx="5" />

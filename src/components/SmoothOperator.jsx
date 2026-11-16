@@ -29,12 +29,20 @@ function SmoothOperator() {
         className="smooth-operator__banner"
         src={smoothOperatorBanner}
         alt="Meet the Smooth Operator by Fastrack Automatics"
+        loading="lazy"
+        decoding="async"
       />
 
       <div className="smooth-operator__content">
         <div className="smooth-operator__product">
           <div className="smooth-operator__watch-wrap" aria-live="polite">
-            <img className="smooth-operator__watch" src={watch.image} alt={watch.name} />
+            <img
+              className="smooth-operator__watch"
+              src={watch.image}
+              alt={watch.name}
+              loading="lazy"
+              decoding="async"
+            />
             <button
               className="smooth-operator__arrow smooth-operator__arrow--previous"
               type="button"
@@ -65,6 +73,8 @@ function SmoothOperator() {
           className="smooth-operator__campaign"
           src={automaticsCampaign}
           alt="Automatics with Attitude campaign"
+          loading="lazy"
+          decoding="async"
         />
       </div>
     </section>

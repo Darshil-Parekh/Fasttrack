@@ -16,7 +16,13 @@ function ShopYourVibe() {
       <div className="shop-your-vibe__grid">
         {vibes.map((vibe) => (
           <article className="vibe-card" key={vibe.name}>
-            <img className="vibe-card__image" src={vibe.image} alt="" />
+            <img
+              className="vibe-card__image"
+              src={vibe.image}
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
             <div className="vibe-card__caption">
               <h3>{vibe.name}</h3>
             </div>

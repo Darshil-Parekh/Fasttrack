@@ -68,6 +68,9 @@ const HeroCarousel = () => {
                 src={image}
                 alt={`Fastrack promotional banner ${index + 1}`}
                 className="hero-image"
+                loading={index === currentIndex ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : "auto"}
+                decoding="async"
               />
             </div>
           ))}

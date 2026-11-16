@@ -89,8 +89,20 @@ function Footer() {
       <div className="site-footer__main">
         <div className="footer__brand">
           <a className="footer__logo-link" href="/" aria-label="Fastrack home">
-            <img className="footer__logo" src={logo} alt="Fastrack" />
-            <img className="footer__brand-mark" src={brandMark} alt="" />
+            <img
+              className="footer__logo"
+              src={logo}
+              alt="Fastrack"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              className="footer__brand-mark"
+              src={brandMark}
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
           </a>
           <nav className="footer__socials" aria-label="Follow Fastrack">
             {socialLinks.map((social) => (

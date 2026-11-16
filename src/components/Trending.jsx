@@ -52,7 +52,12 @@ function Trending() {
           {visibleProducts.map((product, index) => (
             <article className="trending-card" key={`${product.image}-${index}`}>
               <div className="trending-card__image">
-                <img src={product.image} alt={product.name} />
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div className="trending-card__details">
                 <h3>{product.name}</h3>
